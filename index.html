@@ -3,13 +3,13 @@
     <head>
         <title>Multimodal Hashtag Generator</title>
         <!-- link to main stylesheet -->
-        <link rel="stylesheet" type="text/css" href="/css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
     </head>
     <body>
         <div class="container">
         
         <div class="blurb">
-    <div class="title-project" style="text-align: center"><br>
+    <div class="title-project" style="text-align: center">
         <h1>Multimodal image/video based hashtag generator</h1>
         <h4 style="font-style: italic"> (Abhishek Mathur, Shashank Srikant, Anant Agrawal and Vatsal Soni)</h4><br><br><br><br>
     </div>
@@ -29,6 +29,7 @@
         classifier are subsequently used by the corresponding text based approach.</p> -->
         <br><br><br><br>
         <hr>
+        <hr>
         <!-- <h4> arXiv Link of the paper can be found <a href="https://arxiv.org/abs/1903.10641">here</a>.</h4> -->
         
         <h2><span style="font-weight: bold;">Abstract</span></h2>
@@ -40,6 +41,7 @@
         classifier are subsequently used by the corresponding text based approach.
         </h4><br><br>
         <center><img src="fig1.jpg" width=20%><br><h5>Figure 1: Predicting the correct hashtag: #dog is difficult without the image</h5><br></center>
+        <hr>
         <hr>
         <h2><span style="font-weight: bold;">Dataset details</span></h2>
         <h4 style="text-align: justify; font-weight: normal;">
@@ -64,6 +66,7 @@ from a diverse set of few topics mentioned below:<br>
 data of 50k to 60k texts and images respectively.<br><br>
         <h3><a href="https://drive.google.com/drive/folders/1IakHwyTgaTKxZa0RqQ99TRuamhEi-8xp?usp=sharing ">Link to the datasets</a></h3><br>
         </h4><hr>
+        <hr>
         <h2><span style="font-weight: bold;">Image Classifier</span></h2>
         <h4 style="text-align: justify; font-weight: normal;">
             The image classifier to be used will be a Resnet50 model that gave very high accuracy in the
@@ -75,6 +78,7 @@ As of now, a Resnet50 [2] model with Binary cross entropy loss was trained to do
 predictions. However, the model isn’t able to generalize well for the given data and the same model
 will also be tested for single label topic prediction.
         </h4><br>
+        <hr>
         <hr>
         <h2><span style="font-weight: bold;">Text Classifier</span></h2>
         <h4 style="text-align: justify; font-weight: normal;">
@@ -110,7 +114,7 @@ the generic and insta-specific meaning of a word.</li>
 </ul>
     </h4>
     <hr>
-
+    <hr>
     <h2><span style="font-weight: bold;">Combining both approaches</span></h2>
         <h4 style="text-align: justify; font-weight: normal;">
             We have trained the image classifier to predict the category to which a post belongs (10 categories
@@ -120,7 +124,7 @@ category is used to generate the new hashtags. In case no text is provided, we s
 return the top K hashtags for the topic predicted by the classifier.
         </h4><br>
         <hr>
-
+        <hr>
     <h2><span style="font-weight: bold;">Implementations and Code</span></h2>
         <h4 style="text-align: justify; font-weight: normal;">
             The repo contains all our
@@ -133,6 +137,8 @@ based approach are given in Figure 3 and 4.
             <h3><a href="https://github.com/talsperre/IRE-hashtag-generation">Link to the repository (Github)</a><br></h3>
         <center><img src="fig3.jpg" width=20%><br><h5>Figure 3: Predicted hashtags: #ig #amazing #life #beauty #inspiration</h5></center><hr width=30%><br>
         <center><img src="fig4.jpg" width=20%><br><h5>Figure 4: Predicted hashtags: #hiking #mountain #adventure #forest #outdoor</h5></center>
+        <hr>
+        <hr>
         <hr>
 
 
@@ -167,8 +173,8 @@ mendation for multimodal microblog using co-attention network. In IJCAI, pages 3
     </div>
 
 
-    <hr>
-    <div class="qual-results">
+
+    <!-- <div class="qual-results">
         <h3 style="font-weight: bold;">Qualitative Results</h3>
         <h4 style="font-weight: bold;">Sample Video sequence in KITTI Tracking dataset</h4>
         <video width="500" height="280" controls>
@@ -217,7 +223,6 @@ mendation for multimodal microblog using co-attention network. In IJCAI, pages 3
        </div>       
     </div>
     <br> 
-    
     <hr>
     <div class="results">
         <h3 style="font-weight: bold;">Results</h3>
@@ -549,7 +554,7 @@ mendation for multimodal microblog using co-attention network. In IJCAI, pages 3
             </table>
         </span>
         <br>        
-    </div>
+    </div> -->
 </div><!-- /.blurb -->
 
         
