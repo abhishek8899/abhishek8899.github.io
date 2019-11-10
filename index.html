@@ -9,55 +9,164 @@
         <div class="container">
         
         <div class="blurb">
-    <div class="title-project" style="text-align: center">
-        <h2>INFER: INtermediate representations for FuturE pRediction</h2>
-        <h4 style="font-style: italic"> Shashank Srikanth, Junaid Ahmed Ansari, R. Karnik Ram, Sarthak Sharma, J. Krishna Murthy, and K. Madhava Krishna</h4>
+    <div class="title-project" style="text-align: center"><br>
+        <h1>Multimodal image/video based hashtag generator</h1>
+        <h4 style="font-style: italic"> (Abhishek Mathur, Shashank Srikant, Anant Agrawal and Vatsal Soni)</h4><br><br><br><br>
     </div>
     <div class="teaser" style="text-align: center">
-        <img src="/images/teaser.png" alt="Mountain View" style="width:760px;height:280px;">
+        <!-- <img src="/images/teaser.png" alt="Mountain View" style="width:760px;height:280px;"> -->
         <!-- <video width="500" height="280" controls> -->
             <!-- <source src="/videos/project_video.mp4" type="video/mp4" frameborder="0" allowfullscreen> -->
         <!-- </video> -->
         <iframe width="560" height="315" src="https://www.youtube.com/embed/mc6xvyuNYE0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="content">
-        <p style="font-size: 12px; text-align: justify;">
-                <span style="font-weight: bold;">Future prediction</span> Left: (top) An interesting scenario from  KITTI (using Lidar and stereo) 
-                where the car (cyan bounding box) will turn left over the next 4 seconds. Using INFER, we predict this future trajectory, given the past 
-                trajectory (the trail behind the car). The predicted future trajectory (orange) and the ground truth trajectory (blue) are projected on to the 
-                image. On the top-right and bottom-right, we show zero-shot transfer results on the Cityscapes (using stereo) and Oxford Robot Car (using Lidar) 
-                which demonstrates cross-sensor and varying driving scenario transferability. For visualization, we register the predicted and ground truth 
-                trajectories in 3D for each of the dataset (shown below the image): The green 3D bounding box depicts the first sighting of the vehicle of 
-                interest which is also when we start preconditioning, and the red 3D bounding box indicates the start of prediction. We also register the 
-                Lidar/depth information (cyan-road, dark gray-lane, and magenta-road) to demonstrate the accuracy of our prediction.
-        </p>
-        <br>
+        <!-- <p style="font-size: 18px; text-align: justify;">
+                <span style="font-weight: bold;" size="10"><br><br><br><br><b><h2>Abstract</h2></b></span> The goal of this project is to generate hashtags given a multi-modal post on OSM like Instagram that may contain both images and text content. The user might also provide a set of few seed hashtags as input and the generated hashtags should be relevant to these hashtags as well. In
+        the Figure 1, we are given an image, text content and certain hashtags (#dog, #birthday) as the inputs 1 . Our proposed method needs to utilize this data and suggest few other hashtags like
+        #celebration, #party or #puppy for the same post. The project thus requires us to leverage the latest methods in computer vision such as Convolutional Neural Networks (Resnet50, Transfer
+        learning) and in NLP such as glove embeddings, and word2vec to get a high precision/recall on the given task. We propose a two level hierarchical system where the predictions made by an image
+        classifier are subsequently used by the corresponding text based approach.</p> -->
+        <br><br><br><br>
         <hr>
-        <h4> arXiv Link of the paper can be found <a href="https://arxiv.org/abs/1903.10641">here</a>.</h4>
-        <h4> Code can be found <a href="https://github.com/talsperre/INFER">here</a>.</h4>
-        <h4> The datasets can be found <a href="https://drive.google.com/drive/folders/1Nq0hlJdNsYxZCkikrII16QBa4YGscTHo?usp=sharing">here</a>.</h4>
+        <!-- <h4> arXiv Link of the paper can be found <a href="https://arxiv.org/abs/1903.10641">here</a>.</h4> -->
+        
+        <h2><span style="font-weight: bold;">Abstract</span></h2>
+        <h4 style="text-align: justify; font-weight: normal;">
+            The goal of this project is to generate hashtags given a multi-modal post on OSM like Instagram that may contain both images and text content. The user might also provide a set of few seed hashtags as input and the generated hashtags should be relevant to these hashtags as well. In
+        the Figure 1, we are given an image, text content and certain hashtags (#dog, #birthday) as the inputs 1 . Our proposed method needs to utilize this data and suggest few other hashtags like
+        #celebration, #party or #puppy for the same post. The project thus requires us to leverage the latest methods in computer vision such as Convolutional Neural Networks (Resnet50, Transfer
+        learning) and in NLP such as glove embeddings, and word2vec to get a high precision/recall on the given task. We propose a two level hierarchical system where the predictions made by an image
+        classifier are subsequently used by the corresponding text based approach.
+        </h4><br><br>
+        <center><img src="fig1.jpg" width=20%><br><h5>Figure 1: Predicting the correct hashtag: #dog is difficult without the image</h5><br></center>
         <hr>
-        <h3><span style="font-weight: bold;">Abstract</span></h3>
-        <h4 style="text-align: justify;">
-            Deep learning methods have ushered in a new era for computer vision and robotics. With very accurate methods for object detection and semantic 
-            segmentation, we are now at a juncture where we can envisage the application of these techniques to perform higher-order understanding. One such 
-            application which we consider in this work, is predicting future states of traffic participants in urban driving scenarios. Specifically, we argue 
-            that constructing intermediate representations of the world using off-the-shelf computer vision models for semantic segmentation and object 
-            detection, we can train models that account for the multi-modality of future states, and at the same time transfer well across different train and 
-            test distributions (datasets).
+        <h2><span style="font-weight: bold;">Dataset details</span></h2>
+        <h4 style="text-align: justify; font-weight: normal;">
+            A few datasets such as YFCC100M and HARRISON dataset deal with the task of hashtag
+generation using images. However, these datasets do not provide us with text data that is required
+for the training of our multimodal system. A few other datasets such as deal with the task of
+personalized image captioning given text and image data along with prior user posts.
+Thus, we collect our own dataset for the given task by scraping posts from Instagram using
+Selenium as the official Instagram API has rate limits. Our dataset consists of hashtags collected
+from a diverse set of few topics mentioned below:<br>
+<ul>
+    <li>Pets</li>
+    <li>Art</li>
+    <li>Jewellery</li>
+    <li>Food</li>
+    <li>Architecture</li>
+    <li>Babies</li>
+    <li>Nature</li>
+    <li>Fashion</li>
+</ul><br>For each of the above mentioned topics, we manually chose the top 7 hashtags and scrape first
+50 pages of Instagram explore (around 900 posts) for each of the hashtag. So we will end up having a
+data of 50k to 60k texts and images respectively.<br><br>
+        <h3><a href="https://drive.google.com/drive/folders/1IakHwyTgaTKxZa0RqQ99TRuamhEi-8xp?usp=sharing ">Link to the datasets</a></h3><br>
+        </h4><hr>
+        <h2><span style="font-weight: bold;">Image Classifier</span></h2>
+        <h4 style="text-align: justify; font-weight: normal;">
+            The image classifier to be used will be a Resnet50 model that gave very high accuracy in the
+Imagenet challenge. We intend to leverage transfer learning to finetune the model on our dataset.
+Only the last layer of the model will be trained and we won’t perform backpropagation on the
+remaining layers of the network. The loss function used will be Binary Cross Entropy loss or the
+normal cross entropy loss depending on whether it is multi-label or single label tasks respectively.
+As of now, a Resnet50 [2] model with Binary cross entropy loss was trained to do multilabel
+predictions. However, the model isn’t able to generalize well for the given data and the same model
+will also be tested for single label topic prediction.
+        </h4><br>
+        <hr>
+        <h2><span style="font-weight: bold;">Text Classifier</span></h2>
+        <h4 style="text-align: justify; font-weight: normal;">
+            We have trained a word embedding approach like Word2Vec [3] and Glove embeddings [5] on our
+corpus and used distance measures such as cosine similarity to get the most relevant hashtags. As
+one of the baselines, we also aim to implement a simple topic modelling based approach (LDA) for
+the task of hashtag generation. The approach is detailed below.
+A sample post representing the typical posts on Instagram has been shown in Figure 2.
+        </h4><br><br>
+        <center><img src="fig2.jpg" width=20%><br><h5>Figure 2: Shows lack of sufficient text</h5></center>
+        <h4 style="text-align: justify; font-weight: normal;">Typically a post consists of the following:
+<ul><li>A photo</li>
+<li>A caption of 2-3 lines</li>
+<li>A bunch of hashtags</li>
+</ul><br>
+    From above it is clear that the amount of text present is very less and therefore using only
+the text for training our model won’t be enough. We tackle the above problem using below 2
+approaches:
+<ul>
+<li>Assuming the hashtags that appear together are semantically related to each other we can also
+convert them to text and include them in our training corpus. Using the above assumption
+we prepare our corpus by first preprocessing (removing non-english texts, emoticons, etc.)
+and then training two different models on the prepared corpus.
+<ul><li>Word2Vec: Using 30 epochs and window size of 5 we trained the model to create 300
+dimensional word embeddings.</li>
+<li>GloVe: Using 30 epochs for training we trained the model to create 300 dimensional
+word embeddings.</li></ul></li>
+<li>To better capture the semantic relationship between words we use pre-trained word embed-
+dings for a corpus size of 400K words trained on wikipedia data. We train our word2Vec
+model with our corpus on top of it which helps to capture the context of the instagram
+corpus. Therefore our vocabulary is able to cover more words and is able to capture both
+the generic and insta-specific meaning of a word.</li>
+</ul>
+    </h4>
+    <hr>
 
-            Our approach, dubbed INFER (INtermediate representations for distant FuturE pRediction), involves training an autoregressive model that takes in an 
-            intermediate representation of past states of the world, and predicts a multimodal distribution over plausible future states. The model consists of an 
-            Encoder-Decoder with ConvLSTM present along the skip connections, and in between the Encoder-Decoder. The network takes an intermediate 
-            representation of the scene and predicts the future locations of the Vehicle of Interest (VoI). We outperform the current best future prediction 
-            model on KITTI while predicting deep into the future (3 sec, 4 sec) by a significant margin. Contrary to most approaches dealing with future 
-            prediction that do not generalize well to datasets that they have not been trained on, we test our method on different datasets like Oxford RobotCar and 
-            Cityscapes, and show that the network performs well across these datasets which differ in scene layout, weather conditions, and also generalizes well 
-            across cross-sensor modalities. We carry out a thorough ablation study on our intermediate representation that captures the role played by different 
-            semantics. We conclude the results section by showcasing an important use case of future prediction : multi object tracking and exhibit results on select 
-            sequences from KITTI and Cityscapes.
+    <h2><span style="font-weight: bold;">Combining both approaches</span></h2>
+        <h4 style="text-align: justify; font-weight: normal;">
+            We have trained the image classifier to predict the category to which a post belongs (10 categories
+mentioned above), and trained 10 different embeddings for each individual topic. We have used glove for these word embeddings. During test time, given a new post with an image, the image
+classifier classifies into one of the 10 categories and then the embedding for that particular
+category is used to generate the new hashtags. In case no text is provided, we simply
+return the top K hashtags for the topic predicted by the classifier.
+        </h4><br>
+        <hr>
+
+    <h2><span style="font-weight: bold;">Implementations and Code</span></h2>
+        <h4 style="text-align: justify; font-weight: normal;">
+            The repo contains all our
+data collection scripts (Instagram scraper), image classifier code and the code for Word2Vec and
+Glove embedding training.
+The text based approaches perform well for our given data and will be complemented greatly
+if given additional information by the image classifier as well. Some sample outputs of the text
+based approach are given in Figure 3 and 4.
         </h4>
+            <h3><a href="https://github.com/talsperre/IRE-hashtag-generation">Link to the repository (Github)</a><br></h3>
+        <center><img src="fig3.jpg" width=20%><br><h5>Figure 3: Predicted hashtags: #ig #amazing #life #beauty #inspiration</h5></center><hr width=30%><br>
+        <center><img src="fig4.jpg" width=20%><br><h5>Figure 4: Predicted hashtags: #hiking #mountain #adventure #forest #outdoor</h5></center>
+        <hr>
+
+
+        <h2><span style="font-weight: bold;">References</span></h2>
+        <h4 style="text-align: justify; font-weight: normal;">
+            <ol>
+                <li>Cesc Chunseong Park, Byeongchang Kim, and Gunhee Kim. Attend to you: Personalized image
+captioning with context sequence memory networks. In Proceedings of the IEEE Conference
+on Computer Vision and Pattern Recognition, pages 895–903, 2017.</li>
+                <li>Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. Deep residual learning for image
+recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition,
+pages 770–778, 2016.</li>
+                <li>Tomas Mikolov, Kai Chen, Greg Corrado, and Jeffrey Dean. Efficient estimation of word
+representations in vector space. arXiv preprint arXiv:1301.3781, 2013.</li>
+                <li>Minseok Park, Hanxiang Li, and Junmo Kim. Harrison: A benchmark on hashtag recommen-
+dation for real-world images in social networks, 2016.</li>
+                <li>Jeffrey Pennington, Richard Socher, and Christopher Manning. Glove: Global vectors for word
+representation. In Proceedings of the 2014 conference on empirical methods in natural language
+processing (EMNLP), pages 1532–1543, 2014.</li>
+                <li>Bart Thomee, David A Shamma, Gerald Friedland, Benjamin Elizalde, Karl Ni, Douglas
+Poland, Damian Borth, and Li-Jia Li. Yfcc100m: The new data in multimedia research.
+arXiv preprint arXiv:1503.01817, 2015.</li>
+                <li>Qi Zhang, Jiawen Wang, Haoran Huang, Xuanjing Huang, and Yeyun Gong. Hashtag recom-
+mendation for multimodal microblog using co-attention network. In IJCAI, pages 3420–3426,
+2017.</li>
+            </ol>
+        </h4>
+        <hr>
+
+
+
     </div>
+
+
     <hr>
     <div class="qual-results">
         <h3 style="font-weight: bold;">Qualitative Results</h3>
