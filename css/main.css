@@ -70,3 +70,35 @@ hr{
 .imgContainer{
     float:left;
 }
+
+.navbar {
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  font-size: 2vw;
+  z-index: 100;
+}
+
+.tablink {
+    background-color:white;
+    color:black;
+    /*float: left;*/
+    border:1;
+    padding: 10px 26px;
+    font-size: 50%;
+    /*width: 20%;*/
+    opacity:1;
+}
+
+.tablink1 {
+    background-color:black;
+    color:white;
+    /*float: left;*/
+    border:1;
+    padding: 10px 26px;
+    font-size: 50%;
+    /*width: 20%;*/
+    opacity:1;
+}
