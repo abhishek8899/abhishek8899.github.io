@@ -34,15 +34,50 @@
         
         <h2><span style="font-weight: bold;">Abstract</span></h2>
         <h4 style="text-align: justify; font-weight: normal;">
-            The goal of this project is to generate hashtags given a multi-modal post on OSM like Instagram that may contain both images and text content. The user might also provide a set of few seed hashtags as input and the generated hashtags should be relevant to these hashtags as well. In
-        the Figure 1, we are given an image, text content and certain hashtags (#dog, #birthday) as the inputs 1 . Our proposed method needs to utilize this data and suggest few other hashtags like
-        #celebration, #party or #puppy for the same post. The project thus requires us to leverage the latest methods in computer vision such as Convolutional Neural Networks (Resnet50, Transfer
-        learning) and in NLP such as glove embeddings, and word2vec to get a high precision/recall on the given task. We propose a two level hierarchical system where the predictions made by an image
-        classifier are subsequently used by the corresponding text based approach.
+            The goal of this project is to generate hashtags given a multi-modal post on OSM (Online Social
+Media) like Instagram that may contain both images and text content. The user might also provide
+a set of few seed hashtags as input and the generated hashtags should be relevant to these hashtags
+as well. In the Figure 1, we are given an image, text content and certain hashtags (#dog, #birthday)
+as the inputs 1 . Our proposed method needs to utilize this data and suggest few other hashtags
+like #celebration, #party or #puppy for the same post. The project thus requires us to leverage
+the latest methods in computer vision such as Convolutional Neural Networks (Resnet50, Transfer
+learning) and in NLP such as glove embeddings, and word2vec to get a high precision/recall on the
+given task. We propose a two level hierarchical system where the predictions made by an image
+classifier are subsequently used by the corresponding text based approach. Our proposed approach
+shows significantly better results than the proposed baselines. To foster further research and to
+encourage reproducibility we release all our code and dataset respectively in our project page.
         </h4><br><br>
         <center><img src="fig1.jpg" width=20%><br><h5>Figure 1: Predicting the correct hashtag: #dog is difficult without the image</h5><br></center>
         <hr>
         <hr>
+
+        <h2><span style="font-weight: bold;">Related Work</span></h2>
+        <h4 style="text-align: justify; font-weight: normal;">
+            The task of hashtag generation has been studied a lot in the past. One set of approaches use only
+the text data to predict relevant hashtags. Most of these approaches model
+the problem as either a classification or ranking task. Another set of approaches involve the use
+of topic modelling based methods such as LDA to generate relevant hashtags. LDA is often used to
+model the underlying topic assignment of language classified tweets.  The LDA
+based models are improved by using a novel tweet pooling methods. However, none of these methods make use of multimodal data such as both images and text for the task of hashtag recommendation / generation
+which is what we aim to solve.
+There also exist works which predict the hastags using the images only. Zero-shot learning is sometimes used along with a novel loss function to predict the hashtags for a given image.
+On the other hand, a scene model is often used and an object model trained on the MIT Places dataset
+and Imagenet dataset respectively to predict multiple hashtags for a given image. They use a binary
+cross entropy loss to train their problem in the multi-label setting. None of these approaches utilize
+multimodal data and as the problem is posed as a classification task, these approaches are not
+capable of generating new hashtags that are not a label in the dataset.
+Recently, a few approaches have also been proposed that use multimodal data for image
+captioning and hashtag recommendation. A novel co-attention mechanism is used to first
+predict relevant hashtags and then generate personalized recommendations. A few other approaches also deal with the task of hashtag generation / recommendation using
+multimodal data. However, unlike these methods, our approach is trained on a few specific topics
+of Instagram posts and is capable of generating a diverse set of relevant hashtags.
+        </h4>
+
+
+        <hr>
+        <hr>
+
+
         <h2><span style="font-weight: bold;">Dataset details</span></h2>
         <h4 style="text-align: justify; font-weight: normal;">
             A few datasets such as YFCC100M and HARRISON dataset deal with the task of hashtag
@@ -51,7 +86,8 @@ for the training of our multimodal system. A few other datasets such as deal wit
 personalized image captioning given text and image data along with prior user posts.
 Thus, we collect our own dataset for the given task by scraping posts from Instagram using
 Selenium as the official Instagram API has rate limits. Our dataset consists of hashtags collected
-from a diverse set of few topics mentioned below:<br>
+from a diverse set of few topics mentioned below:<br><br>
+<center><img src="data.jpg" width=80%><br><h5>Figure 2: A brief description of our data collection pipeline</h5></center>
 <ul>
     <li>Pets</li>
     <li>Art</li>
@@ -60,10 +96,10 @@ from a diverse set of few topics mentioned below:<br>
     <li>Architecture</li>
     <li>Babies</li>
     <li>Nature</li>
-    <li>Fashion</li>
-</ul><br>For each of the above mentioned topics, we manually chose the top 7 hashtags and scrape first
-50 pages of Instagram explore (around 900 posts) for each of the hashtag. So we will end up having a
-data of 50k to 60k texts and images respectively.<br><br>
+    <li>Travel</li>
+</ul><br>For the purposes of training and evaluating
+our model, we split our data into a train, validation and test set with 70%, 15% and 15% of the
+data respectively.<br><i>Description:</i><br>
         <h3><a href="https://drive.google.com/drive/folders/1IakHwyTgaTKxZa0RqQ99TRuamhEi-8xp?usp=sharing ">Link to the datasets</a></h3><br>
         </h4><hr>
         <hr>
